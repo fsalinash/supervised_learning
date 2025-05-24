@@ -79,3 +79,20 @@ All the previous  steps are iterative. It usually takes 6 months to develop a st
 1. Evaluation:
     - Run backtests on data
     - Run the model on the test dataset.
+
+## Feature Engineering
+
+Use domain knowledge to select and transform the most relevant
+features or variables from raw data.
+
+
+## Bias - Variance Tradeoff
+
+Bias is how far your expected value is from the actual value. Variance is how
+sensitive the model is to changes in the data.
+
+If you want to achieve 0 bias, you will need to overfit the model thus creating
+high variance. If you want 0 variance you will need a very unelastic model (think 
+about a model that always assign the same value) which will have a huge bias. 
+
+In other words, you need to make a trade off beetween accuracy and overfitting.
