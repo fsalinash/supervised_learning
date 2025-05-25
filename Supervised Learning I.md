@@ -19,12 +19,12 @@ i.e. they don't capture relative error:
 - L2 or quadratic error: Squared loss 
 - Huber: It's behaviour depends on a threshold level $\delta$:
 
-    $L_\delta(r) = \left\{
-        \begin{matrix}  
+    $L_\delta(r) = 
+        \begin{cases}  
         \frac{1}{2} r^2 & \text{for } |r| \leq \delta \\
         \delta(|r| - \frac{1}{2}\delta) & \text{otherwise}
-        \end{matrix}
-        \right. $
+        \end{cases}
+        $
 
 ## Gradient Descent
 
