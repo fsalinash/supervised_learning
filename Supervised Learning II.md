@@ -45,14 +45,14 @@ $$\log(odds) = \log\left(\frac{p}{1-p}\right) = \sum_{q=0}^Q w_qx_q = z $$
 
 Rearranging terms:
 
-$$\begin{align*}
+$$\begin{aligned}
 \frac{p}{1-p} &= e^z \\
 \frac{1}{p} - 1 &= \frac{1}{e^z} \\
 \frac{1}{p} &= \frac{1 + e^z}{e^z} \\
 p &= \frac{e^z}{1+e^z} \\
 p &= \frac{1}{1+e^{-z}} \\
 \sigma(z) &= \frac{1}{1+e^{-z}}
-\end{align*}$$
+\end{aligned}$$
 
 Where $\sigma(z) = g(z)$ is the logistic function and a sigmoid.
 
@@ -149,7 +149,7 @@ We now define our loss function as $L = -\log(P)$ and replace
 $\hat{y} = \frac{1}{1+e^{-z}}$:
 
 $$L = -y \log\left(\frac{1}{1+e^{-z}}\right)
-- (1-y)\log\left(1-\frac{1}{1+e^{-z}}\right)$$
+-(1-y)\log\left(1-\frac{1}{1+e^{-z}}\right)$$
 
 Let's solve both logarithms:
 
@@ -374,11 +374,11 @@ will give us the maximal margin.
 
 To recap, the **hard margin classifier** is the result off:
 
-$$\begin{align*}
+$$\begin{aligned}
 & \arg\min \frac{1}{2}||\vec{w}||^2 \\
 & \text{subject to} \\
 & y_i (\vec{w}\vec{x_i} + b) - 1 = 0
-\end{align*}$$
+\end{aligned}$$
 
 ### Support Vector Classifier (SVC) - Soft Margin
 
@@ -387,11 +387,11 @@ like that. We need to relax the constraint. That's why we have the
 **soft margin classifier** also known as the **Support Vector Classifier**:
 
 
-$$\begin{align*}
+$$\begin{aligned}
 & \arg\min \frac{1}{2}||\vec{w}||^2 + C\sum_i^n \zeta_i\\
 & \text{subject to} \\
 & y_i (\vec{w}\vec{x_i} + b) \geq (1 - \zeta_i) 
-\end{align*}$$
+\end{aligned}$$
 
 Here the $\zeta_i$ is the *relaxation* of the model. If:
 
@@ -422,7 +422,7 @@ $$\zeta_i = \max(0, 1-m))$$
 
 Which is the *hinge loss formula*. If we rewrite the minimization problem we have:
 
-$$\argmin \frac{1}{2}||\vec{w}||^2 + C\sum_i^n \max(0, 1-m)$$
+$$\arg\min \frac{1}{2}||\vec{w}||^2 + C\sum_i^n \max(0, 1-m)$$
 
 ### Support Vector Machines (SVM)
 
@@ -515,12 +515,12 @@ for our hyperplane:
 Here you want the opposite, i.e., you want vectors to lie inside the margin. So the restriction
 have the opposite sign. We update the SVC to this case:
 
-$$\begin{align*}
-& \arg\min \frac{1}{2}||\vec{w}||^2 + C\sum_i^n (\zeta_i + \zeta_i^*)\\
+$$\begin{aligned}
+& \arg\min \frac{1}{2}\|\vec{w}\|^2 + C\sum_i^n (\zeta_i + \zeta_i^*)\\
 & \text{subject to} \\
 & y_i -\vec{w}\vec{x_i} - b \leq (\epsilon + \zeta_i) \\
 & \vec{w}\vec{x_i} + b - y_i \leq (\epsilon + \zeta_i^*) 
-\end{align*}$$
+\end{aligned}$$
 
 The cost function is called well-loss
 
