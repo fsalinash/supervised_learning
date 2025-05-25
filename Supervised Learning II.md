@@ -516,10 +516,10 @@ Here you want the opposite, i.e., you want vectors to lie inside the margin. So 
 have the opposite sign. We update the SVC to this case:
 
 $$\begin{aligned}
-& \arg\min \frac{1}{2}\|\vec{w}\|^2 + C\sum_i^n (\zeta_i + \zeta_i^*)\\
-& \text{subject to} \\
-& y_i -\vec{w}\vec{x_i} - b \leq (\epsilon + \zeta_i) \\
-& \vec{w}\vec{x_i} + b - y_i \leq (\epsilon + \zeta_i^*) 
+&\arg\min \frac{1}{2}\|\vec{w}\|^2 + C\sum_{i}^{n} (\zeta_{i} + \zeta_{i}^*)\\
+&\text{subject to} \\
+&y_{i} -\vec{w}\vec{x_{i}} - b \leq (\epsilon + \zeta_{i}) \\
+&\vec{w}\vec{x_{i}} + b - y_{i} \leq (\epsilon + \zeta_{i}^*) 
 \end{aligned}$$
 
 The cost function is called well-loss
