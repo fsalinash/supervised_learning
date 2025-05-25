@@ -374,13 +374,8 @@ will give us the maximal margin.
 
 To recap, the **hard margin classifier** is the result off:
 
-$$
-\DeclareMathOperator*{\argmin}{arg\,min}
-\DeclareMathOperator*{\argmax}{arg\,max}
-$$
-
 $$\begin{align*}
-& \argmin \frac{1}{2}||\vec{w}||^2 \\
+& \arg\min \frac{1}{2}||\vec{w}||^2 \\
 & \text{subject to} \\
 & y_i (\vec{w}\vec{x_i} + b) - 1 = 0
 \end{align*}$$
@@ -393,7 +388,7 @@ like that. We need to relax the constraint. That's why we have the
 
 
 $$\begin{align*}
-& \argmin \frac{1}{2}||\vec{w}||^2 + C\sum_i^n \zeta_i\\
+& \arg\min \frac{1}{2}||\vec{w}||^2 + C\sum_i^n \zeta_i\\
 & \text{subject to} \\
 & y_i (\vec{w}\vec{x_i} + b) \geq (1 - \zeta_i) 
 \end{align*}$$
@@ -442,7 +437,7 @@ We start by creating the lagrangian problem:
 
 $$\begin{flalign}
 &&\\
-\argmin_{\vec{w}, b} L 
+\arg\min_{\vec{w}, b} L 
 = \frac{1}{2}||\vec{w}||^2-\sum_i^n \alpha_i (y_i (\vec{w}\vec{x_i} + b) - 1)
 \end{flalign}$$
 
@@ -521,7 +516,7 @@ Here you want the opposite, i.e., you want vectors to lie inside the margin. So 
 have the opposite sign. We update the SVC to this case:
 
 $$\begin{align*}
-& \argmin \frac{1}{2}||\vec{w}||^2 + C\sum_i^n (\zeta_i + \zeta_i^*)\\
+& \arg\min \frac{1}{2}||\vec{w}||^2 + C\sum_i^n (\zeta_i + \zeta_i^*)\\
 & \text{subject to} \\
 & y_i -\vec{w}\vec{x_i} - b \leq (\epsilon + \zeta_i) \\
 & \vec{w}\vec{x_i} + b - y_i \leq (\epsilon + \zeta_i^*) 
