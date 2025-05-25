@@ -61,7 +61,7 @@ Then the prediction is:
 $$\hat{y} = \left\{\begin{matrix}
 0 & \text{if } \hat{p} < 0.5 \\
 1 & \text{if } \hat{p} \geq 0.5 \\
-\end{matrix}\right. $$
+\end{matrix}\right.$$
 
 Where $\hat{p} = g(z)$.
 
